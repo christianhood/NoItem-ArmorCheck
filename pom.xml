@@ -28,6 +28,9 @@
   		<groupId>net.worldoftomorrow</groupId>
   		<artifactId>NoItem</artifactId>
   		<version>3.0.3-SNAPSHOT</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  		<optional>false</optional>
   	</dependency>
   </dependencies>
   <scm>
