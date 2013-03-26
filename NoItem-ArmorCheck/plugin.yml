@@ -1,0 +1,18 @@
+name: ArmorCheck
+main: net.beastware.ArmorCheck.ArmorCheck
+depend: [NoItem]
+version: 1.0
+commands:
+   checkarmor:
+      description: Removes players armor
+      usage: /checkarmor [playername]
+      permission: ArmorCheck.checkarmor
+      permission-message: You don't have <permission>
+permissions:
+  ArmorCheck.*:
+    description: Gives access to all ArmorCheck commands.
+    children:
+      ArmorCheck.checkarmor: true
+  ArmorCheck.checkarmor:
+    description: Allows you to use the /checkarmor command.
+    default: op
