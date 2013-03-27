@@ -3,5 +3,5 @@ before_install:
   - git clone --depth=50 --branch=master git://github.com/nala3/NoItem.git christianhood/NoItem
   - cd christianhood/NoItem
   - git checkout master
-  - org.apache.maven.plugins:maven-dependency-plugin:2.1:get \ -Dartifact=net.milkbowl.vault:Vault:1.2.22-SNAPSHOT[:jar] \ -DrepoUrl=http://ci.herocraftonline.com/plugin/repository/everything/
+  - mvn org.apache.maven.plugins:maven-dependency-plugin:2.1:get \ -Dartifact=net.milkbowl.vault:Vault:1.2.22-SNAPSHOT[:jar] \ -DrepoUrl=http://ci.herocraftonline.com/plugin/repository/everything/
   - mvn install
