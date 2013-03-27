@@ -8,16 +8,7 @@
   <build>
     <defaultGoal>clean compile package</defaultGoal>
     <sourceDirectory>src</sourceDirectory>
-    <resources>
-			<resource>
-				<includes>
-					<include>plugin.yml</include>
-				</includes>
-				<directory>${basedir}</directory>
-				<filtering>true</filtering>
-			</resource>
-	</resources>
-	<plugins>
+    <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -28,6 +19,15 @@
         </configuration>
       </plugin>
     </plugins>
+    <resources>
+			<resource>
+				<includes>
+					<include>plugin.yml</include>
+				</includes>
+				<directory>${basedir}</directory>
+				<filtering>true</filtering>
+			</resource>
+	</resources>
   </build>
   <organization>
   	<name>Beastware</name>
