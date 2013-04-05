@@ -9,22 +9,15 @@ import org.bukkit.entity.*;
 import org.bukkit.inventory.*;
 import org.bukkit.plugin.java.*;
 
-import net.worldoftomorrow.noitem.NoItem;
-import net.worldoftomorrow.noitem.permissions.Perm;
-import net.worldoftomorrow.noitem.permissions.PermMan;
-import net.worldoftomorrow.noitem.util.Messenger;
-import net.worldoftomorrow.noitem.util.Messenger.AlertType;
+import net.worldoftomorrow.nala.ni.EventTypes;
+import net.worldoftomorrow.nala.ni.Perms;
+import net.worldoftomorrow.nala.ni.StringHelper;
 
 public final class ArmorCheck extends JavaPlugin {
-	
-	PermMan perms;
-	
-	
     @Override
     public void onEnable(){
         // TODO Insert logic to be performed when the plugin is enabled
     	
-    	perms = NoItem.getPermsManager();
     }
  
     @Override
@@ -71,7 +64,7 @@ public final class ArmorCheck extends JavaPlugin {
 		// go through and find out which armor needs to be removed
 		for(int i = 0; i < playerArmor.length; i++) {
 			ItemStack armorPiece = playerArmor[i];
-			if (armorPiece != null && perms.has(p, Perm.WEAR, armorPiece)) {
+			if (armorPiece != null && Perms.NOWEAR.has(p, armorPiece)) {
 				foundPerm = true;
 				playerArmor[i] = null;
     			
@@ -79,9 +72,8 @@ public final class ArmorCheck extends JavaPlugin {
 				//   add it to our drop list if inventory is full
 				armorToDrop.addAll((inv.addItem(armorPiece).values()));
     			
-    			
-				Messenger.sendMessage(p, AlertType.WEAR, armorPiece);
-				Messenger.alertAdmins(p, AlertType.WEAR, armorPiece);
+				StringHelper.notifyPlayer(p, EventTypes.WEAR, armorPiece.getTypeId());
+				StringHelper.notifyAdmin(p, EventTypes.WEAR, armorPiece);
 			}
 		}
 
