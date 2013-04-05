@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.beastware</groupId>
   <artifactId>ArmorCheck</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>ArmorCheck</name>
   <description>Checks players armor against NoItem perms.</description>
   <build>
@@ -38,7 +38,7 @@
   	<dependency>
   		<groupId>net.worldoftomorrow</groupId>
   		<artifactId>NoItem</artifactId>
-  		<version>3.0.3-SNAPSHOT</version>
+  		<version>3.0.4-SNAPSHOT</version>
   		<type>jar</type>
   		<scope>compile</scope>
   		<optional>false</optional>

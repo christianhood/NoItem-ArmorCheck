@@ -1,7 +1,7 @@
 name: ArmorCheck
 main: net.beastware.ArmorCheck.ArmorCheck
 depend: [NoItem]
-version: 1.0
+version: 1.0.1
 commands:
    checkarmor:
       description: Removes players armor
